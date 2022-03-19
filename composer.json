@@ -1,0 +1,17 @@
+{
+    "name": "amsar/php-blog",
+    "autoload": {
+        "psr-4": {
+            "Router\\": "routes/",
+            "App\\":"app/",
+            "Database\\":"database"
+        }
+    },
+    "authors": [
+        {
+            "name": "AMIR479",
+            "email": "69789786+AMIR479@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
