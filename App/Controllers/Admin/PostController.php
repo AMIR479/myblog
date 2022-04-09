@@ -8,7 +8,7 @@ use App\Controllers\Controller;
 
 class PostController extends Controller {
 
-
+// Controller Posts
     public function index()
     {
        
@@ -18,7 +18,7 @@ class PostController extends Controller {
         return $this->view('admin.post.index' , compact('posts'));
     }
 
-    
+    // Creéation des tags
     public function create()
     {
         $this->isAdmin();
@@ -38,10 +38,10 @@ class PostController extends Controller {
         
         $post = new Post($this->getDB());
         
-        // il ne prend pas le dernier element du tableaux.
+      
         $tags = array_pop($_POST);
        
-        // pose probleme l'aglo de la methode create !!!!!!!!!!!!!!
+      
         $result = $post->create($_POST , $tags);
      
         if ($result){
@@ -61,6 +61,7 @@ class PostController extends Controller {
         return $this->view('admin.post.form' , compact('post' , 'tags'));
     }
 
+        // Mis à jour des posts
     public function update(int $id)
     {
         $this->isAdmin();
