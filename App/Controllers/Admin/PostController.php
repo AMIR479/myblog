@@ -75,7 +75,7 @@ class PostController extends Controller {
             return header('Location: /admin/posts');
         }
     }
-
+    // Suppression des posts
     public function destroy(int $id){
 
         $this->isAdmin();
