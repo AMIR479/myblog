@@ -36,11 +36,14 @@ abstract class Model {
 
     public function create(array $data, ?array $relations = null)
     {
+       
         
 
         $firstParenthesis = "";
         $secondParenthesis = "";
         $i = 1;
+
+        
 
         foreach($data as $key => $value){
             $coma = $i === count($data) ? "" : ", ";
@@ -49,10 +52,12 @@ abstract class Model {
             $i++;
 
         }
-
+       
         
+        $query = $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
+    
 
-        return $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
+        return $query;
         
     }
 
@@ -70,7 +75,7 @@ abstract class Model {
         $data['id'] = $id;
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
 
-        $sql = "UPDATE {$this->table} SET titre = : titre, contenu = :contenu WHERE id = :id";
+        $sql = "UPDATE {$this->table} SET titre = : titre, contenu = :contenu, chapo = :chapo, auteur = :auteur, date_creation = :date_creation WHERE id = :id";
     }
 
     public function destroy(int $id) : bool{

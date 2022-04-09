@@ -1,0 +1,62 @@
+.card_form{
+    width: 30%;
+    margin: 0 auto;
+ 
+}
+
+.btn{
+    text-align: center;
+   
+    margin: auto;
+    
+}
+.blog{
+   
+    width: 30%;
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    
+}
+
+#connect{
+    background-color: #e57373;
+    color: black;
+    font-weight: bold;
+    margin: 2rem auto;
+    
+    
+}
+
+#log{
+    background-color: #e57373;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-contro{
+    color: #e57373;
+   
+    
+}
+
+#form{
+    background-color:rgb(248, 248, 231);
+    margin-top: 3rem;
+    
+}
+
+#insc{
+    background-color:rgb(248, 248, 231);
+    margin-top: 5rem;
+}
+
+#valid{
+    background-color: #e57373;
+    color: black;
+    font-weight: bold;
+    
+    margin-top: 1rem;
+}
+
+
+

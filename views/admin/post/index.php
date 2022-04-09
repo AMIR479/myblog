@@ -23,6 +23,7 @@
       <td><?= $post->titre ?></td>
       <td><?= $post->getCreatedAt() ?></td>
       
+      
       <td>
         <a href="/admin/posts/edit/<?= $post->id ?>" class="btn btn-warning ">Modifer</a>
         <form  action="/admin/posts/delete/<?= $post->id ?>" method="POST" class="d-inline">

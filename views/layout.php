@@ -6,7 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Blog AMIR</title>
       <link rel="stylesheet" href="<?= SCRIPTS .'css' . DIRECTORY_SEPARATOR . 'app.css'?>">
-  </head>
+      <link rel="stylesheet" href="<?= SCRIPTS .'css' . DIRECTORY_SEPARATOR . 'style.css'?>">
+    </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand btn btn-danger" href="/">Blog Amir
@@ -24,11 +25,13 @@
             <a class="nav-link" href="/posts">Tous les posts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
+            <a class="nav-link " href="/login">Login</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="/admin/posts">Admin</a>
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
         </ul> 
         <ul class="navbar-nav ml-auto ">

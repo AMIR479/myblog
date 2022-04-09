@@ -6,6 +6,15 @@
         <input type="text" class="form-control" name="titre" id="titre" value="<?= $params['post']->titre ?? ''?>">
     </div>
     <div class="form-group">
+        <label for="titre">Chapo</label>
+        <input type="text" class="form-control" name="chapo" id="chapo" value="<?= $params['post']->chapo ?? ''?>">
+    </div>
+    <div class="form-group">
+        <label for="titre">Auteur</label>
+        <input type="text" class="form-control" name="auteur" id="auteur" value="<?= $params['post']->auteur ?? ''?>">
+    </div>
+   
+    <div class="form-group">
         <label for="contenu">Contenu de l'article</label>
         <textarea name="contenu" id="contenu" rows="8" class="form-control"><?= $params['post']->contenu ?? '' ?></textarea>
     </div>

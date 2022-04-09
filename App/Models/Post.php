@@ -7,10 +7,14 @@ use DateTime;
 class Post extends Model{
     protected $table = 'posts';
 
+   
+
     public function getCreatedAt(): string {
        return (new DateTime($this->date_creation))->format('d/m/Y à H:i');
         
     }
+
+    
 
     public function getExcerpt(): string{
         return substr($this->contenu, 0, 200) . '...';
@@ -19,7 +23,7 @@ class Post extends Model{
 
     public function getButton(): string{
         return <<<HTML
-        <a href="./posts/$this->id" class="btn btn-primary ">Lire l'article</a>
+        <a href="/posts/$this->id" class="btn btn-primary ">Lire l'article</a>
 
 HTML;
     }
@@ -33,14 +37,17 @@ HTML;
     }
 
 
-    public function create(array $data, ?array $relations = null)
+    public function create(array $data, ?array $relations = null,  ?int $id=null)
     {
+        $data['id_user']=$id;
+        
+        
         parent::create($data);
-
+       
         $id = $this->db->getPDO()->lastInsertId();
-
+        
         foreach($relations as $tagId){
-            $stmt = $this->db->getPDO()->prepare("INSERT post_tag(post_id, tag_id) VALUES (?, ?)"); 
+            $stmt = $this->db->getPDO()->prepare("INSERT INTO post_tag(post_id, tag_id) VALUES (?, ?)"); 
             $stmt->execute([$id, $tagId]);
         }
 
@@ -55,7 +62,7 @@ HTML;
       $result = $stmt->execute([$id]);
 
        foreach($relations as $tagId){
-           $stmt = $this->db->getPDO()->prepare("INSERT post_tag(post_id, tag_id) VALUES (?, ?)"); 
+           $stmt = $this->db->getPDO()->prepare("INSERT INTO post_tag(post_id, tag_id) VALUES (?, ?)"); 
            $stmt->execute([$id, $tagId]);
        }
       

@@ -1,17 +1,24 @@
 
 <h1><strong>Accueil</strong></h1>
 
-<p>Le Sénégal est un pays situé sur 
-    la côte ouest de l'Afrique 
-    et doté d'un héritage colonial français et de nombreuses attractions naturelles. Dakar, la capitale, comprend le quartier historique de la Médina et le célèbre musée Théodore Monod, exposant des œuvres d'art africain. Elle est également réputée pour sa vie nocturne, centrée sur la musique mbalax, originaire du Sénégal. Saint-Louis, ancienne capitale de l'Afrique-Occidentale française, abrite une vieille ville à l'architecture coloniale. ― Google
-Capitale : Dakar
-Devise : Franc CFA
-Président : Macky Sall
-Population : 16,74 millions (2020) Banque mondiale
-Le Sénégal, en forme longue la république du Sénégal, est un État d'Afrique de l'Ouest.
+<h4>Présentation du blog</h4>
 
-Il est bordé par l'océan Atlantique à l'ouest , la Mauritanie au nord-nord-est, le Mali à l'est-sud-est, la Guinée au sud-est et la Guinée-Bissau au sud-sud-ouest. La Gambie forme une quasi-enclave dans le Sénégal, pénétrant à plus de 302 km à l'intérieur des terres. Les îles du Cap-Vert sont situées à 560 km de la côte sénégalaise.
+    <p>
+        Dans ce blog, nous présentation le continent africain sur le plan <br>
+        - politique <br>
+        - économique <br>
+        - sociologique <br>
+        - sportif <br>
+    </p>
+    <p>
+    L’Afrique est un continent qui couvre 6 % de la surface de la Terre et 20 % de la surface des terres émergées. 
+    Sa superficie est de 30 415 873 km2 avec les îles, ce qui en fait la troisième mondiale si l'on compte l'Amérique comme un seul continent.
+     Avec plus de 1,3 milliard d'habitants, l'Afrique est le deuxième continent le plus peuplé après l'Asie 
+     et représente 17,2 % de la population mondiale en 2020. Le continent est bordé par la mer Méditerranée au nord, 
+     le canal de Suez et la mer Rouge au nord-est, l’océan Indien au sud-est et l’océan Atlantique à l’ouest.
 
-Le pays doit son nom au fleuve qui le borde à l'est et au nord et qui prend sa source dans le Fouta-Djalon en Guinée. Le climat est tropical et sec avec deux saisons : la saison sèche et la saison des pluies.
-
-Le Sénégal fait partie de la Communauté économique des États de l'Afrique de l'Ouest (CEDEAO). Intégré aux principales instances de la communauté internationale, le Sénégal fait également partie de l'Union africaine (UA), de la Communauté des États sahélo-sahariens (CES), de l'Organisation internationale de la francophonie et de l'Organisation de la coopération islamique.</p>
+    L'Afrique est traversée presque en son milieu par l'équateur et présente plusieurs climats : chaud et humide au plus près de l'équateur,
+     tropical dans les régions comprises entre l'équateur et les tropiques, chaud et aride autour des tropiques, tempéré dans les zones d'altitude. 
+     Le continent est caractérisé par le manque de précipitations régulières. En l'absence de glaciers ou de systèmes montagneux aquifères, 
+     il n'existe pas de moyen de régulation naturelle du climat à l’exception des côtes. Les terres arides représentent 60 % de son territoire. 
+    </p>

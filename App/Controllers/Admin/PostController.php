@@ -34,12 +34,16 @@ class PostController extends Controller {
     public function createPost()
     {
         $this->isAdmin();
-       
+   
+        
         $post = new Post($this->getDB());
-
+        
+        // il ne prend pas le dernier element du tableaux.
         $tags = array_pop($_POST);
-
+       
+        // pose probleme l'aglo de la methode create !!!!!!!!!!!!!!
         $result = $post->create($_POST , $tags);
+     
         if ($result){
             return header('Location: /admin/posts');
         }

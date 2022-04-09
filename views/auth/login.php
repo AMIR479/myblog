@@ -12,18 +12,34 @@
 <?php endforeach ?>
 
 <?php endif ?>  
-<?php session_destroy() ?>  
+<?php session_destroy() ?> 
 
-<h1 class="btn btn-success mt-5">LOGIN</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="<?= SCRIPTS .'css' . DIRECTORY_SEPARATOR . 'style.css'?>">
+</head>
+<body>
+    
+</body>
+</html>
 
-<form action="/login" method="POST">
-    <div class="form-group">
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" class="form-control" name="username" id="username">
-    </div>
-    <div class="form-group">
-        <label for="password">Mot de Passe</label>
-        <input type="password" class="form-control" name="password" id="password">
-    </div>
-       <button type="submit" class="btn btn-primary mt-3">Se connecter</button>
-</form>
+
+<div class="container card_form" id="form">
+    <span><h2 class=" container text-center btn  mt-5  mb-3" id="log" >LOGIN</h2></span>
+                <br>
+    <form action="/login" method="POST" >
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" id="username" placeholder="Entrer votre pseudo">
+        <br>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Entrer votre mot de passe">
+        </div>
+        <div>
+            <button type="submit" class="btn  " id="connect" >Se connecter</button>
+        </div>  
+        
+    </form>
+</div>

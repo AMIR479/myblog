@@ -14,17 +14,28 @@ define('DB_PWD', 'root');
 
 $router = new Router($_GET['url']);
 
+// Route Accueil
 $router->get('/', 'App\Controllers\BlogController@welcome');
+
+// Routes Blogs
 $router->get('/posts', 'App\Controllers\BlogController@index');
 $router->get('/posts/:id', 'App\Controllers\BlogController@show');
+$router->post('/comment/create/:id', 'App\Controllers\BlogController@addComment');
 $router->get('/tags/:id', 'App\Controllers\BlogController@tag');
 
+// Routes User
 $router->get('/login', 'App\Controllers\UserController@login');
 $router->post('/login', 'App\Controllers\UserController@loginPost');
 $router->get('/logout' , 'App\Controllers\UserController@logout');
+$router->get('/register' , 'App\Controllers\UserController@register' );
+$router->post('/register' , 'App\Controllers\UserController@registerPost' );
+$router->get('/user' , 'App\Controllers\UserController@user');
 
+// Routes Contacts
+$router->get('/contact', 'App\Controllers\ContactController@welcome');
+$router->post('/posts/contact', 'App\Controllers\ContactController@sendMsg');
 
-
+// Routes Admin
 $router->get('/admin/posts' , 'App\Controllers\Admin\PostController@index');
 $router->get('/admin/posts/create' , 'App\Controllers\Admin\PostController@create');
 $router->post('/admin/posts/create' , 'App\Controllers\Admin\PostController@createPost');
@@ -40,3 +51,5 @@ try{
   
     return $e->error404();
 }
+
+
