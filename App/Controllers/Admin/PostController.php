@@ -36,10 +36,13 @@ class PostController extends Controller {
         $this->isAdmin();
    
         
+        
         $post = new Post($this->getDB());
         
       
         $tags = array_pop($_POST);
+
+        
        
       
         $result = $post->create($_POST , $tags);
