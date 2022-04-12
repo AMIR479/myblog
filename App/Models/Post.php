@@ -39,9 +39,8 @@ HTML;
 
     public function create(array $data, ?array $relations = null,  ?int $id=null)
     {
-        $data['id_user']=$id;
         
-        
+       
         parent::create($data);
        
         $id = $this->db->getPDO()->lastInsertId();
