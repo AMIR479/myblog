@@ -34,9 +34,9 @@ abstract class Model {
     }
 
 
-    public function create(array $data, ?array $relations = null)
+    public function create(array $data, ?array $relations = null, ?int $id=null)
     {
-       
+        
         
 
         $firstParenthesis = "";
