@@ -1,6 +1,8 @@
+
+
 <h1><?= $params['post']->titre ?? 'Créer un nouvel article' ?></h1>
 
-<form action="<?= isset($params['post']) ? "/admin/posts/edit/{$params['post']->id}"  : "/admin/posts/create "?>" method="POST">
+<form action="<?= isset($params['post']) ? "/admin/posts/edit/{$params['post']->id}"  : "/admin/posts/create"?>" method="POST">
     <div class="form-group">
         <label for="titre">Titre de l'article</label>
         <input type="text" class="form-control" name="titre" id="titre" value="<?= $params['post']->titre ?? ''?>">

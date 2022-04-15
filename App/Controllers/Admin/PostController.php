@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Models\Tag;
 use App\Models\Post;
 use App\Controllers\Controller;
+use App\Models\User;
 
 class PostController extends Controller {
 
@@ -30,25 +31,27 @@ class PostController extends Controller {
         
     }
 
-
+    // creation du Post
     public function createPost()
     {
-        $this->isAdmin();
-   
-        
+
+        $id = $this->isAdmin();
+
+       
         
         $post = new Post($this->getDB());
         
-      
         $tags = array_pop($_POST);
 
-        
-       
       
-        $result = $post->create($_POST , $tags);
-     
+
+        $result = $post->createPost($_POST, null,  $id);
+        
         if ($result){
             return header('Location: /admin/posts');
+        } else {
+
+            return header('Location: /admin/create');
         }
 
     }

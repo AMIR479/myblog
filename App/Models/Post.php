@@ -39,10 +39,11 @@ HTML;
 
     public function create(array $data, ?array $relations = null,  ?int $id=null)
     {
-        
-       
+    
+
         parent::create($data);
        
+
         $id = $this->db->getPDO()->lastInsertId();
         
         foreach($relations as $tagId){
@@ -50,6 +51,14 @@ HTML;
             $stmt->execute([$id, $tagId]);
         }
 
+        return true;
+    }
+
+    public function createPost(array $data, ?array $relations = null,  ?int $id=null)
+    {
+        $data['id_user']=$id;
+        parent::create($data, null, $id);
+             
         return true;
     }
 
