@@ -54,6 +54,7 @@ HTML;
         return true;
     }
 
+    // Création des posts et avec récupération id de l'admin
     public function createPost(array $data, ?array $relations = null,  ?int $id=null)
     {
         $data['id_user']=$id;
