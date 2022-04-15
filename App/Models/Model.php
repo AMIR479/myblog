@@ -39,11 +39,11 @@ abstract class Model {
         
         
 
+
         $firstParenthesis = "";
         $secondParenthesis = "";
         $i = 1;
 
-        
 
         foreach($data as $key => $value){
             $coma = $i === count($data) ? "" : ", ";
@@ -51,9 +51,16 @@ abstract class Model {
             $secondParenthesis .= ":{$key}{$coma}"; 
             $i++;
 
+            // echo '<pre>' , var_dump('Column: ',$firstParenthesis) , '</pre>';
+            // echo '<pre>' , var_dump('Values:',$secondParenthesis) , '</pre>';
+            // echo '<pre>' , var_dump('data:',$data) , '</pre>';
         }
-       
+        //die();
         
+//          $sql = "INSERT INTO users (name, surname, sex) VALUES (:name, :surname, :sex)";
+//          $stmt= $pdo->prepare($sql);
+//          $stmt->execute($data);
+//          requete preparer : 
         $query = $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
     
 
