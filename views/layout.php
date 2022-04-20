@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="<?= SCRIPTS . 'css' . DIRECTORY_SEPARATOR . 'style.css' ?>">
   <link rel="stylesheet" href="<?= SCRIPTS . 'css' . DIRECTORY_SEPARATOR . 'styles.css' ?>">
 </head>
-
+<!-- Barre de navigation -->
 <body>
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-relative " id="mainNav" >
     <div class="container mb-3">
