@@ -1,4 +1,6 @@
-<h1>Administration des articles</h1>
+<div class="container">
+<div class="card-body">
+<h1 class="titre mt-3 text-center">Administration des articles</h1>
 
 <?php if(isset( $_GET['success'])): ?>
   <div class="alert alert-success">Vous êtes connecté</div>
@@ -34,3 +36,5 @@
   <?php endforeach ?>
  </tbody>
 </table>
+</div>
+</div>

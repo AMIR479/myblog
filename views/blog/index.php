@@ -1,8 +1,8 @@
 
-<h1>Tous les posts</h1>
+<div class="container mt-2rem" >
+<h1 class="mt-5 mb-2 text-center">Tous les posts</h1>
 
 <?php foreach($params['posts'] as $post): ?>
-    
 <div class="card mb-3">
     <div class="card-body">
         <h2><?= $post->titre  ?></h2>
@@ -20,5 +20,7 @@
 </div>
 
 <?php endforeach ?>
+</div>
+
 
 

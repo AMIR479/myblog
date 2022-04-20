@@ -36,6 +36,13 @@ HTML;
         WHERE pt.post_id = ? ", [$this->id]);
     }
 
+    public function getComments()
+    {
+        return $this->query("SELECT c.* FROM commentaire c
+        INNER JOIN posts p ON p.id = c.id_posts
+        WHERE p.id = ? ", [$this->id]);
+    }
+
 
     public function create(array $data, ?array $relations = null,  ?int $id=null)
     {
@@ -54,7 +61,7 @@ HTML;
         return true;
     }
 
-    // Création des posts et avec récupération id de l'admin
+    // Création des posts et avec récupération id 
     public function createPost(array $data, ?array $relations = null,  ?int $id=null)
     {
         $data['id_user']=$id;

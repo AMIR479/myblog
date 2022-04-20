@@ -19,6 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?= SCRIPTS .'css' . DIRECTORY_SEPARATOR . 'style.css'?>">
+    
 </head>
 <body>
     
@@ -26,8 +27,8 @@
 </html>
 
 
-<div class="container card_form" id="form">
-    <span><h2 class=" container text-center btn  mt-5  mb-3" id="log" >LOGIN</h2></span>
+<div class="container card_form " id="form">
+    <span><h2 class="container text-center btn  mt-5  mb-4" id="log" >LOGIN</h2></span>
                 <br>
     <form action="/login" method="POST" >
         <div class="form-group">

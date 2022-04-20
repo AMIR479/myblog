@@ -31,6 +31,7 @@
     background-color: #e57373;
     font-weight: bold;
     text-align: center;
+    margin-top: 5rem;
 }
 
 .form-contro{
@@ -41,7 +42,7 @@
 
 #form{
     background-color:rgb(248, 248, 231);
-    margin-top: 3rem;
+    margin-top: 5rem;
     
 }
 
@@ -58,5 +59,12 @@
     margin-top: 1rem;
 }
 
+#mainNav{
+    padding-bottom: 0rem;
+}
+ #formCon{
+    background-color: #e57373;
+    font-weight: bold;
+ }
 
 

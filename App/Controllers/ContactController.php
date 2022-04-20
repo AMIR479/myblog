@@ -12,18 +12,30 @@ class ContactController extends Controller{
     
 
     // MEthodes
-    public function sendMsg(string $username, string $msgUser , string $emailUser)
+    public function sendMsg()
     
     {
+
+
         $username = $_POST['username'];
         $msgUser = $_POST['message'];
         $emailUser = $_POST['email'];
 
         
+      
         if(isset($_POST['envoyer']))
         {
-            if(!$username  && !$msgUser && !$emailUser)
+           
+            
+     
+            if(!empty($username)  && !empty(!$msgUser) && !empty($emailUser))
             {
+                var_dump($username, $msgUser, $emailUser);
+                die();
+                
+            
+        
+            
                 $message = '
                 <u>Nom de l\'expéditeur : </u>'. $username.' <br/>
                 <u>Email de l\'expéditeur : </u>'. $emailUser.' <br/>
@@ -32,9 +44,17 @@ class ContactController extends Controller{
                 ';
 
                 mail('toto@gmail.com', 'contact', $message);
+
+                return header('Location: /');
             }
+             
             
+        } else {
+
+            return header('Location: /posts/contact');
         }
+
+     
 
      
         
