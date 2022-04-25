@@ -16,26 +16,17 @@ class ContactController extends Controller{
     
     {
 
-
-        $username = $_POST['username'];
-        $msgUser = $_POST['message'];
-        $emailUser = $_POST['email'];
+        
+        $username = htmlentities($_POST['username']);
+        $msgUser = htmlentities($_POST['message']);
+        $emailUser = htmlentities($_POST['email']);
 
         
       
         if(isset($_POST['envoyer']))
-        {
-           
-            
-     
-            if(!empty($username)  && !empty(!$msgUser) && !empty($emailUser))
+        { 
+            if(!empty($username)  && !empty($msgUser) && !empty($emailUser))
             {
-                var_dump($username, $msgUser, $emailUser);
-                die();
-                
-            
-        
-            
                 $message = '
                 <u>Nom de l\'expéditeur : </u>'. $username.' <br/>
                 <u>Email de l\'expéditeur : </u>'. $emailUser.' <br/>

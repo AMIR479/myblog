@@ -57,10 +57,7 @@ abstract class Model {
         }
         //die();
         
-//          $sql = "INSERT INTO users (name, surname, sex) VALUES (:name, :surname, :sex)";
-//          $stmt= $pdo->prepare($sql);
-//          $stmt->execute($data);
-//          requete preparer : 
+ 
         $query = $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
     
 
@@ -72,6 +69,7 @@ abstract class Model {
     {
         $sqlRequestPart = "";
         $i = 1;
+       
 
         foreach($data as $key => $value){
             $coma = $i === count($data) ? "" : ', ';

@@ -1,4 +1,4 @@
-
+<!-- Page affichage des inscriptions -->
 <!DOCTYPE html>
 <html lang="en">
     

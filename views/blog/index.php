@@ -1,4 +1,4 @@
-
+<!-- Page affichage de tous les posts -->
 <div class="container mt-2rem" >
 <h1 class="mt-5 mb-2 text-center">Tous les posts</h1>
 

@@ -42,10 +42,10 @@ class UserController extends Controller{
         if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']))
         
         {
-            $username = htmlspecialchars($_POST['username']);
-            $email = htmlspecialchars($_POST['email']);
-            $password = htmlspecialchars($_POST['password']);
-            $password_confirm = htmlspecialchars($_POST['password_confirm']);
+            $username = htmlentities($_POST['username']);
+            $email = htmlentities($_POST['email']);
+            $password = htmlentities($_POST['password']);
+            $password_confirm = htmlentities($_POST['password_confirm']);
 
             $register =  (new Register($this->getDB()))->getByUseremail($email);
         

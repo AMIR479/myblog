@@ -42,6 +42,8 @@ class BlogController extends Controller{
     public function addComment (int $id){
        
         $comment = new Comment($this->getDB());
+
+        $_POST['contenu'] = htmlentities($_POST['contenu']);
        
         $result = $comment->create($_POST, null, $id);
 

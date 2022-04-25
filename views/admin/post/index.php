@@ -1,3 +1,5 @@
+
+<!-- Page admin  -->
 <div class="container">
 <div class="card-body">
 <h1 class="titre mt-3 text-center">Administration des articles</h1>

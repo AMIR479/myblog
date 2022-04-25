@@ -1,3 +1,5 @@
+<!-- page gestion des Tags -->
+
 <h1><?= $params['tag']->name  ?></h1>
 <?php foreach($params['tag']->getPosts() as $post): ?>
     

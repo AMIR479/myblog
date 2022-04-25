@@ -1,4 +1,4 @@
-
+<!-- page affichage de la connexion -->
 <?php if (isset($_SESSION['errors'])): ?>
 
 <?php foreach($_SESSION['errors'] as $errorsArray): ?>

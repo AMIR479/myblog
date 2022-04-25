@@ -18,7 +18,6 @@
    
     <div class="form-group">
         <label for="contenu">Contenu de l'article</label>
-        <textarea name="contenu" id="contenu" rows="8" class="form-control"><?= $params['post']->contenu ?? '' ?></textarea>
     </div>
     <div class="form-group">
         <label for="tags">Tags de l'article </label>
