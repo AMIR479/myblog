@@ -1,7 +1,9 @@
+<!-- Page d'accueil -->
+
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="public\assets\img\carteAfrica.jpg" alt="logo" />
+        <img class="masthead-avatar mb-5" src="public\assets\img\carteAfrica.jpg" alt="logo" style="border-radius: 50%;" />
         <!-- Masthead Heading-->
         <h5 class="masthead-heading text-uppercase mb-0">Bienvenue sur mon blog personnel</h5>
         <!-- Icon Divider-->
