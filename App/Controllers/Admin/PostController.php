@@ -71,12 +71,13 @@ class PostController extends Controller {
     public function update(int $id)
     {
         $this->isAdmin();
-        
+    
         $post = new Post($this->getDB());
-
+        
         $tags = array_pop($_POST);
 
-        $result = $post->update($id , $_POST , $tags);
+         $result = $post->update($id , $_POST , $tags);  
+       
         if ($result){
             return header('Location: /admin/posts');
         }
