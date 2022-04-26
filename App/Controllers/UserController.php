@@ -10,17 +10,17 @@ use App\Validation\Validator;
 use Database\DBConnexion;
 
 
-class UserController extends Controller{
-   
-   
+class UserController extends Controller
+{
+
+
     protected $db;
 
-    
+
     public function login()
     {
-        
-        return $this->view('auth.login');
 
+        return $this->view('auth.login');
     }
 
     public function user()
@@ -38,39 +38,31 @@ class UserController extends Controller{
     public function registerPost()
 
     {
-   
-        if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm']))
-        
-        {
+
+        if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm'])) {
             $username = htmlentities($_POST['username']);
             $email = htmlentities($_POST['email']);
             $password = htmlentities($_POST['password']);
             $password_confirm = htmlentities($_POST['password_confirm']);
 
             $register =  (new Register($this->getDB()))->getByUseremail($email);
-        
-            if($register == false)
-            {
-                if(strlen($username) <= 255)
-                {
-                    if(strlen($email) <=255)
-                    {
-                        if(filter_var($email, FILTER_VALIDATE_EMAIL))
-                        {
-                            if($password == $password_confirm)
-                            {
-                               
-                                $password= password_hash($password, PASSWORD_DEFAULT);
 
-                            
+            if ($register == false) {
+                if (strlen($username) <= 255) {
+                    if (strlen($email) <= 255) {
+                        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            if ($password == $password_confirm) {
+
+                                $password = password_hash($password, PASSWORD_DEFAULT);
+
+
                                 $addUser = (new Register($this->getDB()))->addUser($username, $email, $password);
                                 header('Location: /login');
-                                
-                            }else header('Location: /register?reg_err=password');
-                        }else header('Location: /register?reg_err=email');
-                    }else header('Location: /register?reg_err=email_lenght'); 
-                }else header('Location: /register?reg_err=username_length');
-            }else header('location: /register?reg_err=already');
+                            } else header('Location: /register?reg_err=password');
+                        } else header('Location: /register?reg_err=email');
+                    } else header('Location: /register?reg_err=email_lenght');
+                } else header('Location: /register?reg_err=username_length');
+            } else header('location: /register?reg_err=already');
         }
     }
 
@@ -79,15 +71,15 @@ class UserController extends Controller{
 
     public function loginPost()
     {
-        
+
 
 
         $validator = new Validator($_POST);
-        
+
 
         $errors = $validator->validate([
-            
-            'username' => ['required' , 'min:3'],
+
+            'username' => ['required', 'min:3'],
             'password' => ['required']
         ]);
 
@@ -99,27 +91,21 @@ class UserController extends Controller{
             exit;
         }
 
-        
+
         $user = (new User($this->getDB()))->getByUsername($_POST['username']);
 
-        
+
         if (password_verify($_POST['password'], $user->password)) {
-            
+
             $_SESSION['auth'] = (int) $user->admin;
             $_SESSION['id_user'] = $user->id;
 
             return header('Location: /admin/posts?success=true');
-        
+        } else {
 
-        }
 
-        else {
-
-        
             return header('Location: /login');
-        
         }
-
     }
 
     public function logout()
@@ -129,6 +115,4 @@ class UserController extends Controller{
 
         return header('Location: /');
     }
-
 }
-

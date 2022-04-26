@@ -1,11 +1,11 @@
-<div class="container mt-2"  >
+<div class="container mt-2">
     <h1 class="titrePost text-center mt-3"><?= $params['post']->titre ?></h1>
     <div>
         <?php foreach ($params['post']->getTags() as $tag) : ?>
             <span class="bade badge-info"><a href="./tags/<?= $tag->id ?>" class="text-green"><?= $tag->name ?> </a></span>
         <?php endforeach ?>
 
-<!-- Page affichage de chaque post et commentaires -->
+        <!-- Page affichage de chaque post et commentaires -->
 
         <!DOCTYPE html>
         <html lang="en">
@@ -17,9 +17,9 @@
             <link rel="stylesheet" href="<?= SCRIPTS . 'css' . DIRECTORY_SEPARATOR . 'styles.css' ?>">
             <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
             <script>
-            tinymce.init({
-                selector: '#mytextarea'
-            });
+                tinymce.init({
+                    selector: '#mytextarea'
+                });
             </script>
         </head>
     </div>

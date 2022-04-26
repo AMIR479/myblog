@@ -20,7 +20,7 @@
             <a href="https://fr.linkedin.com/" class="text-dark"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
         </div>
         <a href="./CVAmir.pdf" class="btn btn-success mt-3">Télécharger mon CV</a>
-       
+
     </div>
 </header>
 
