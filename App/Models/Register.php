@@ -20,7 +20,10 @@ class Register extends Model{
     public function addUser(string $username, string $email, string $password)
 
     {
-      
+      $username = htmlentities($username);
+      $email = htmlentities($email);
+      $password = htmlentities($password);
+
         return $req =  $this->query( "INSERT INTO {$this->table} (username, email, password) VALUES ('$username', '$email',  '$password')");
        
          

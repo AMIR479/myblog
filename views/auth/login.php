@@ -23,8 +23,7 @@
 </head>
 <body>
     
-</body>
-</html>
+
 
 
 <div class="container card_form " id="form">
@@ -44,3 +43,5 @@
         
     </form>
 </div>
+</body>
+</html>

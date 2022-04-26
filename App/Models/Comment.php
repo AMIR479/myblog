@@ -23,7 +23,8 @@ class Comment extends Model{
         $data['id_posts']=$id;
        
         parent::create($data);
-        
+
+       
         $id = $this->db->getPDO()->lastInsertId();
 
         

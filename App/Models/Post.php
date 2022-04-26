@@ -65,6 +65,8 @@ HTML;
     public function createPost(array $data, ?array $relations = null,  ?int $id=null)
     {
         $data['id_user']=$id;
+        
+        
         parent::create($data, null, $id);
              
         return true;

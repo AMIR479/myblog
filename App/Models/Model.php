@@ -39,7 +39,6 @@ abstract class Model {
         
         
 
-
         $firstParenthesis = "";
         $secondParenthesis = "";
         $i = 1;
@@ -57,16 +56,25 @@ abstract class Model {
         }
         //die();
         
- 
+//          $sql = "INSERT INTO users (name, surname, sex) VALUES (:name, :surname, :sex)";
+//          $stmt= $pdo->prepare($sql);
+//          $stmt->execute($data);
+//          requete preparer : 
+
+
         $query = $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
     
 
         return $query;
         
+        
     }
 
     public function update(int $id, array $data, array $relations = null)
     {
+
+
+
         $sqlRequestPart = "";
         $i = 1;
        
@@ -78,9 +86,13 @@ abstract class Model {
         }
 
         $data['id'] = $id;
+
+    
+
+
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
 
-        $sql = "UPDATE {$this->table} SET titre = : titre, contenu = :contenu, chapo = :chapo, auteur = :auteur, date_creation = :date_creation WHERE id = :id";
+       // $sql = "UPDATE {$this->table} SET titre = : titre, contenu = :contenu, chapo = :chapo, auteur = :auteur, date_creation = :date_creation WHERE id = :id";
     }
 
     public function destroy(int $id) : bool{

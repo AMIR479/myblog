@@ -34,16 +34,10 @@ class PostController extends Controller {
     // creation du Post
     public function createPost()
     {
-
+        
         $id = $this->isAdmin();
-
-       
-        
         $post = new Post($this->getDB());
-        
         $tags = array_pop($_POST);
-
-      
 
         $result = $post->createPost($_POST, null,  $id);
         
@@ -70,12 +64,13 @@ class PostController extends Controller {
         // Mis à jour des posts
     public function update(int $id)
     {
+     
         $this->isAdmin();
     
         $post = new Post($this->getDB());
-        
+        $data = $_POST;
         $tags = array_pop($_POST);
-
+    
          $result = $post->update($id , $_POST , $tags);  
        
         if ($result){

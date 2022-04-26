@@ -26,10 +26,10 @@
 
 <div class="container">
     <div class="card mt-5 p-4">
-        <h4>Présentation du blog</h4>
+        <h4 class="titre text-center">Présentation du blog</h4>
 
         <p>
-            Dans ce blog, nous présentation le continent africain sur le plan <br>
+            Dans ce blog, nous présentation le continent africain sur le plan: <br>
             - politique <br>
             - économique <br>
             - sociologique <br>

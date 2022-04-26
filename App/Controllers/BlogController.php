@@ -43,9 +43,11 @@ class BlogController extends Controller{
        
         $comment = new Comment($this->getDB());
 
-        $_POST['contenu'] = htmlentities($_POST['contenu']);
-       
+        htmlentities($_POST['contenu']);
+        htmlentities($_POST['auteur']);
+
         $result = $comment->create($_POST, null, $id);
+
 
         if ($result){
             return header('Location: /posts/'.$id);
