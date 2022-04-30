@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE commentaire (
-  `id_comment` int(11) NOT NULL,
-  `id_posts` int(11) DEFAULT NULL,
-  `auteur` varchar(50) DEFAULT NULL,
-  `contenu` text NOT NULL,
-  `date_creation` datetime DEFAULT CURRENT_TIMESTAMP
+  id_comment int(11) NOT NULL,
+  id_posts int(11) DEFAULT NULL,
+  auteur varchar(50) DEFAULT NULL,
+  contenu text NOT NULL,
+  date_creation datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `commentaire`
 --
 
-INSERT INTO commentaire (`id_comment`, `id_posts`, `auteur`, `contenu`, `date_creation`) VALUES
+INSERT INTO commentaire (id_comment, `id_posts`, `auteur`, `contenu`, `date_creation`) VALUES
 (17, 17, 'admin', 'le test post réussi', '2022-04-09 09:56:40'),
 (18, 17, 'amichou', 'je teste la date', '2022-04-09 10:08:33'),
 (19, 61, 'amirou', '@dios', '2022-04-15 02:01:54');
