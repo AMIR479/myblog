@@ -107,7 +107,7 @@ INSERT INTO post_tag (`id`, `post_id`, `tag_id`) VALUES
 -- Table structure for table `tags`
 --
 
-CREATE TABLE `tags` (
+CREATE TABLE tags (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `date_creation` datetime NOT NULL
@@ -117,7 +117,7 @@ CREATE TABLE `tags` (
 -- Dumping data for table `tags`
 --
 
-INSERT INTO `tags` (`id`, `name`, `date_creation`) VALUES
+INSERT INTO tags (`id`, `name`, `date_creation`) VALUES
 (1, 'Actualités', '2022-03-08 14:34:02'),
 (2, 'Politique', '2022-03-08 14:34:02'),
 (3, 'Sport', '2022-03-08 14:36:23'),
@@ -129,7 +129,7 @@ INSERT INTO `tags` (`id`, `name`, `date_creation`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE users (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `admin` int(11) NOT NULL DEFAULT '1',
@@ -141,7 +141,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `admin`, `email`, `password`) VALUES
+INSERT INTO users (`id`, `username`, `admin`, `email`, `password`) VALUES
 (29, 'admin', 1, 'amso@hotmail.com', '$2y$10$a64lojNuvS1CbMoUjqwkxeFhGifV68x.SIU/C7TiNuMb4t4d1zga2'),
 (30, 'Amichou', 0, 'amich@hotmail.fr', '$2y$10$pmgHuLjZMkAiw6EgFG35Q.ank63Q7r32yTd0ajh989x8PtxBPBnvK');
 
@@ -152,21 +152,21 @@ INSERT INTO `users` (`id`, `username`, `admin`, `email`, `password`) VALUES
 --
 -- Indexes for table `commentaire`
 --
-ALTER TABLE `commentaire`
+ALTER TABLE commentaire
   ADD PRIMARY KEY (`id_comment`),
   ADD KEY `id_post` (`id_posts`);
 
 --
 -- Indexes for table `posts`
 --
-ALTER TABLE `posts`
+ALTER TABLE posts
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `post_tag`
 --
-ALTER TABLE `post_tag`
+ALTER TABLE post_tag
   ADD PRIMARY KEY (`id`),
   ADD KEY `tag_id` (`tag_id`),
   ADD KEY `post_tag_ibfk_1` (`post_id`);
@@ -174,13 +174,13 @@ ALTER TABLE `post_tag`
 --
 -- Indexes for table `tags`
 --
-ALTER TABLE `tags`
+ALTER TABLE tags
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE users
   ADD PRIMARY KEY (`id`);
 
 --
@@ -190,32 +190,32 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for table `commentaire`
 --
-ALTER TABLE `commentaire`
+ALTER TABLE commentaire
   MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+ALTER TABLE posts
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
 --
-ALTER TABLE `post_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+ALTER TABLE post_tag
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
-ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE tags
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+ALTER TABLE users
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
@@ -224,19 +224,19 @@ ALTER TABLE `users`
 --
 -- Constraints for table `commentaire`
 --
-ALTER TABLE `commentaire`
+ALTER TABLE commentaire
   ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`id_posts`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `posts`
 --
-ALTER TABLE `posts`
+ALTER TABLE posts
   ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `post_tag`
 --
-ALTER TABLE `post_tag`
+ALTER TABLE post_tag
   ADD CONSTRAINT `post_tag_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `post_tag_ibfk_2` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
