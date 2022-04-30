@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `commentaire`
 --
 
-CREATE TABLE `commentaire` (
+CREATE TABLE commentaire (
   `id_comment` int(11) NOT NULL,
   `id_posts` int(11) DEFAULT NULL,
   `auteur` varchar(50) DEFAULT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `commentaire` (
 -- Dumping data for table `commentaire`
 --
 
-INSERT INTO `commentaire` (`id_comment`, `id_posts`, `auteur`, `contenu`, `date_creation`) VALUES
+INSERT INTO commentaire (`id_comment`, `id_posts`, `auteur`, `contenu`, `date_creation`) VALUES
 (17, 17, 'admin', 'le test post réussi', '2022-04-09 09:56:40'),
 (18, 17, 'amichou', 'je teste la date', '2022-04-09 10:08:33'),
 (19, 61, 'amirou', '@dios', '2022-04-15 02:01:54');
@@ -51,7 +51,7 @@ INSERT INTO `commentaire` (`id_comment`, `id_posts`, `auteur`, `contenu`, `date_
 -- Table structure for table `posts`
 --
 
-CREATE TABLE `posts` (
+CREATE TABLE posts (
   `id` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
   `titre` varchar(100) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `posts` (
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `id_user`, `titre`, `chapo`, `contenu`, `auteur`, `date_creation`) VALUES
+INSERT INTO posts (`id`, `id_user`, `titre`, `chapo`, `contenu`, `auteur`, `date_creation`) VALUES
 (14, NULL, 'Développement de l\'Afrique', 'La croissance économique en Afrique en 2019 est estimée à 3,2 %, soit un peu moins que le taux de croissance de 3,4 % enregistré en 2018. ', 'La croissance économique en Afrique en 2019 est estimée à 3,2 %, soit un peu moins que le taux de croissance de 3,4 % enregistré en 2018. La Côte d\'Ivoire, l\'Éthiopie, la Mauritanie, le Rwanda et la Tanzanie sont en tête et comptent parmi les économies qui affichent les taux de croissances les plus élevés au monde.', 'Amirou', '2022-04-01 17:10:01'),
 (15, NULL, 'Le développement de l\'Afrique, affaire de volonté politique', 'Peut-on favoriser en Afrique un développement durable ? Ma réponse est oui, sous trois conditions majeures. ', 'Peut-on favoriser en Afrique un développement durable ? Ma réponse est oui, sous trois conditions majeures. La première est de donner la priorité absolue à tout ce qui touche la gouvernance : guerre ou paix, sécurité civile, nature des États, stabilité administrative, juridique et fiscale, pratique de la démocratie. La deuxième est d’accepter une remise en cause complète de tous les concepts, procédures et instruments dont se servent aujourd’hui les pays riches pour « aider » les pauvres. La troisième est d’accepter l’idée que le développement ne se parachute pas, et ne peut venir de l’extérieur. Il ne s’affirme que lorsqu’il est autocentré et puissamment piloté par une volonté nationale forte, éclairée et légitime. Dans le continent qui nous intéresse, le seul exemple connu d’un décollage réussi ayant pris appui sur l’aide occidentale est l’île Maurice.', 'Aicha', '2022-04-01 17:12:07'),
 (16, NULL, 'Sport en Afrique', 'LE FOOTBALL EST LE SPORT LE PLUS POPULAIRE EN AFRIQUE', 'Du nord au sud, de l\'est à l\'ouest de l\'Afrique, le football est sans aucun doute le sport le plus populaire et le plus apprécié d\'Afrique.\r\n\r\nLe football est un jeu incroyablement passionnant dont les origines remontent aux années 1800, lorsque les colonialistes britanniques, français et portugais ont introduit ce sport en Afrique.\r\n\r\nContrairement à d\'autres sports, le football nécessite des ressources minimales et c\'est pour cette raison qu\'il a pénétré dans toutes les régions d\'Afrique. Il est courant de trouver des jeunes sur tout le continent, y compris dans les zones rurales, qui aiment jouer au football.', 'Amichou', '2022-04-01 17:13:45'),
@@ -82,7 +82,7 @@ INSERT INTO `posts` (`id`, `id_user`, `titre`, `chapo`, `contenu`, `auteur`, `da
 -- Table structure for table `post_tag`
 --
 
-CREATE TABLE `post_tag` (
+CREATE TABLE post_tag (
   `id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL
@@ -92,7 +92,7 @@ CREATE TABLE `post_tag` (
 -- Dumping data for table `post_tag`
 --
 
-INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`) VALUES
+INSERT INTO post_tag (`id`, `post_id`, `tag_id`) VALUES
 (8, 14, 1),
 (9, 15, 2),
 (10, 16, 3),

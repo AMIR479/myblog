@@ -21,6 +21,7 @@ class Comment extends Model{
     public function create(array $data, ?array $relations = null,  ?int $id=null)
     {
         $data['id_posts']=$id;
+        
        
         parent::create($data);
 

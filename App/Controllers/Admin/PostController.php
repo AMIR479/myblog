@@ -10,7 +10,7 @@ use App\Models\User;
 class PostController extends Controller
 {
 
-    // Controller Posts
+    // Controller tous les Posts
     public function index()
     {
 

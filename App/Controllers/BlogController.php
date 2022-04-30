@@ -5,10 +5,7 @@ namespace App\Controllers;
 use App\Models\Comment;
 use App\Models\Tag;
 use App\Models\Post;
-
-
-
-
+use DateTime;
 
 class BlogController extends Controller{
 
@@ -45,6 +42,8 @@ class BlogController extends Controller{
 
         htmlentities($_POST['contenu']);
         htmlentities($_POST['auteur']);
+       
+        
 
         $result = $comment->create($_POST, null, $id);
 
