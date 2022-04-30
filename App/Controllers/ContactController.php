@@ -16,10 +16,10 @@ class ContactController extends Controller{
     
     {
 
-        
-        $username = htmlentities($_POST['username']);
-        $msgUser = htmlentities($_POST['message']);
-        $emailUser = htmlentities($_POST['email']);
+       
+        $username = htmlentities(filter_input(INPUT_POST,'username'));
+        $msgUser = htmlentities(filter_input(INPUT_POST,'message'));
+        $emailUser = htmlentities(filter_input(INPUT_POST,'email'));
 
         
       

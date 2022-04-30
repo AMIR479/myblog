@@ -36,14 +36,14 @@ class PostController extends Controller
 
         $id = $this->isAdmin();
         $post = new Post($this->getDB());
-        $tags = array_pop($_POST);
+        $posts = filter_input_array(INPUT_POST);
+        $tags = array_pop($posts);
 
-        $result = $post->createPost($_POST, null,  $id);
+        $result = $post->createPost($posts, null,  $id);
 
         if ($result) {
             return header('Location: /admin/posts');
         } else {
-
             return header('Location: /admin/create');
         }
     }
@@ -66,10 +66,10 @@ class PostController extends Controller
         $this->isAdmin();
 
         $post = new Post($this->getDB());
-        $data = $_POST;
-        $tags = array_pop($_POST);
+        $posts = filter_input_array(INPUT_POST);
+        $tags = array_pop($posts);
 
-        $result = $post->update($id, $_POST, $tags);
+        $result = $post->update($id, $posts, $tags);
 
         if ($result) {
             return header('Location: /admin/posts');

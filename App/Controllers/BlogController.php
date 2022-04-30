@@ -40,12 +40,12 @@ class BlogController extends Controller{
        
         $comment = new Comment($this->getDB());
 
-        htmlentities($_POST['contenu']);
-        htmlentities($_POST['auteur']);
+        htmlentities(filter_input(INPUT_POST, 'contenu'));
+        htmlentities(filter_input(INPUT_POST, 'auteur'));
        
         
 
-        $result = $comment->create($_POST, null, $id);
+        $result = $comment->create(filter_input_array(INPUT_POST), null, $id);
 
 
         if ($result){
