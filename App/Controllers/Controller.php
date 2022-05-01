@@ -41,13 +41,10 @@ abstract class  Controller {
      protected function isAdmin()
 
     {
-        $sesAuth = filter_var($_SESSION['auth']);
-        $sesIdUser = filter_var($_SESSION['id_user']);
         
-        
-        if(isset($session) && $session === 1){
+        if(isset($_SESSION['auth']) && $_SESSION['auth'] === 1){
 
-            return $sesIdUser;
+            return $_SESSION['id_user'];
 
         }
         if(isset($_SESSION['auth']) && $_SESSION['auth'] === 0){

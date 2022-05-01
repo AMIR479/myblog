@@ -52,13 +52,13 @@ INSERT INTO commentaire (id_comment, `id_posts`, `auteur`, `contenu`, `date_crea
 --
 
 CREATE TABLE posts (
-  `id` int(11) NOT NULL,
-  `id_user` int(11) DEFAULT NULL,
-  `titre` varchar(100) NOT NULL,
-  `chapo` varchar(255) NOT NULL,
-  `contenu` text NOT NULL,
-  `auteur` varchar(50) DEFAULT NULL,
-  `date_creation` datetime DEFAULT CURRENT_TIMESTAMP
+  id int(11) NOT NULL,
+  id_user int(11) DEFAULT NULL,
+  titre varchar(100) NOT NULL,
+  chapo varchar(255) NOT NULL,
+  contenu text NOT NULL,
+  auteur varchar(50) DEFAULT NULL,
+  date_creation datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -83,9 +83,9 @@ INSERT INTO posts (`id`, `id_user`, `titre`, `chapo`, `contenu`, `auteur`, `date
 --
 
 CREATE TABLE post_tag (
-  `id` int(11) NOT NULL,
-  `post_id` int(11) NOT NULL,
-  `tag_id` int(11) NOT NULL
+  id int(11) NOT NULL,
+  post_id int(11) NOT NULL,
+  tag_id int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -108,9 +108,9 @@ INSERT INTO post_tag (`id`, `post_id`, `tag_id`) VALUES
 --
 
 CREATE TABLE tags (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `date_creation` datetime NOT NULL
+  id int(11) NOT NULL,
+  name varchar(255) NOT NULL,
+  date_creation datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -130,11 +130,11 @@ INSERT INTO tags (`id`, `name`, `date_creation`) VALUES
 --
 
 CREATE TABLE users (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `admin` int(11) NOT NULL DEFAULT '1',
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  id int(11) NOT NULL,
+  username varchar(50) NOT NULL,
+  admin int(11) NOT NULL DEFAULT '1',
+  email varchar(255) NOT NULL,
+  password varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
