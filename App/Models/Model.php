@@ -81,10 +81,7 @@ abstract class Model
         }
 
         $data['id'] = $id;
-
-
-
-
+            
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
 
         // $sql = "UPDATE {$this->table} SET titre = : titre, contenu = :contenu, chapo = :chapo, auteur = :auteur, date_creation = :date_creation WHERE id = :id";
@@ -120,5 +117,27 @@ abstract class Model
             $stmt->execute($param);
             return $stmt->$fetch();
         }
+    }
+
+    public function updateConfirmed(int $id): bool
+    {
+
+        
+        $data['confirmation'] = 1;
+        $data['id_comment'] = $id;
+
+   
+        
+        $req = "UPDATE {$this->table} SET confirmation = :confirmation WHERE id_comment = :id_comment";
+
+        // echo '<pre>' , var_dump('data:',$data) , '</pre>';
+        // echo '<pre>' , var_dump('data:',$req) , '</pre>';
+        // die();
+
+        return $this->query($req, $data);
+
+        // $sql = "UPDATE {$this->table} SET confirmation = : confirmation WHERE id = :id", ;
+
+
     }
 }

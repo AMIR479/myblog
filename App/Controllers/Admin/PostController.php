@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Models\Tag;
 use App\Models\Post;
 use App\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\User;
 
 class PostController extends Controller
@@ -19,6 +20,16 @@ class PostController extends Controller
         $posts = (new Post($this->getDB()))->all();
         return $this->view('admin.post.index', compact('posts'));
     }
+
+        // Controller tous les Posts
+        public function comments()
+        {
+    
+            $this->isAdmin();
+    
+            $comments = (new Comment($this->getDB()))->all();
+            return $this->view('admin.post.comments', compact('comments'));
+        }
 
     // Creéation des tags
     public function create()
@@ -88,4 +99,23 @@ class PostController extends Controller
             return header('Location: /admin/posts');
         }
     }
+
+     // Suppression des posts
+     public function confirmed(int $id)
+     {
+ 
+       
+
+         $this->isAdmin();
+        
+         $comment = new Comment($this->getDB());
+
+         $result = $comment->updateConfirmed($id);
+        
+         var_dump($result);
+
+         if ($result) {
+             return header('Location: /admin/comments');
+         }
+     }
 }

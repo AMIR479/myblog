@@ -1,3 +1,4 @@
+
 <!-- Page admin  -->
 <div class="container">
   <div class="card-body">
@@ -9,7 +10,7 @@
     <?php endif ?>
 
     <a href="/admin/posts/create" class="btn btn-success my-3">Créer un nouvel article</a>
-
+    <a href="/admin/comments" class="btn btn-primary my-3">Valider un Commentaire</a>
     <table class="table">
       <thead>
         <tr>
@@ -25,8 +26,6 @@
             <th scope="row"><?= $post->id ?></th>
             <td><?= $post->titre ?></td>
             <td><?= $post->getCreatedAt() ?></td>
-
-
             <td>
               <a href="/admin/posts/edit/<?= $post->id ?>" class="btn btn-warning ">Modifer</a>
               <form action="/admin/posts/delete/<?= $post->id ?>" method="POST" class="d-inline">

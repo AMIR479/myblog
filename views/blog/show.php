@@ -45,12 +45,16 @@
         </form>
     </div>
     <h5 class="affichageComment text-center">Tous les commentaires</h5>
-    <?php foreach ($params['post']->getComments() as $comment) : ?>
+
+    <?php foreach ($params['post']->getComments() as $comment) : ?>  
+
+        <?php if($comment->confirmation == 1) : ?>
         <div class="card p-3 mb-2 bg-light">
             <div><?= $comment->auteur ?></div>
             <div><?= $comment->contenu ?></div>
             <div><?= $comment->date_creation ?></div>
         </div>
+        <?php endif ?>
     <?php endforeach ?>
 
 </div>

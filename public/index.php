@@ -37,9 +37,11 @@ $router->post('/posts/contact', 'App\Controllers\ContactController@sendMsg');
 
 // Routes Admin
 $router->get('/admin/posts', 'App\Controllers\Admin\PostController@index');
+$router->get('/admin/comments', 'App\Controllers\Admin\PostController@comments');
 $router->get('/admin/posts/create', 'App\Controllers\Admin\PostController@create');
 $router->post('/admin/posts/create', 'App\Controllers\Admin\PostController@createPost');
 $router->post('/admin/posts/delete/:id', 'App\Controllers\Admin\PostController@destroy');
+$router->post('/admin/comment/confirmed/:id', 'App\Controllers\Admin\PostController@confirmed');
 $router->get('/admin/posts/edit/:id', 'App\Controllers\Admin\PostController@edit');
 $router->post('/admin/posts/edit/:id', 'App\Controllers\Admin\PostController@update');
 
