@@ -37,13 +37,13 @@ class UserController extends Controller
 
     public function registerPost()
 
-    {
+    { 
 
         if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_confirm'])) {
-            $username = htmlentities($_POST['username']);
-            $email = htmlentities($_POST['email']);
-            $password = htmlentities($_POST['password']);
-            $password_confirm = htmlentities($_POST['password_confirm']);
+            $username = htmlentities(filter_input(INPUT_POST,'username'));
+            $email = htmlentities(filter_input(INPUT_POST,'email'));
+            $password = htmlentities(filter_input(INPUT_POST,'password'));
+            $password_confirm =htmlentities(filter_input(INPUT_POST,'password_confirm'));
 
             $register =  (new Register($this->getDB()))->getByUseremail($email);
 
@@ -92,7 +92,7 @@ class UserController extends Controller
         }
 
 
-        $user = (new User($this->getDB()))->getByUsername($_POST['username']);
+        $user = (new User($this->getDB()))->getByUsername(htmlentities(filter_input(INPUT_POST,'username')));
 
 
         if (password_verify($_POST['password'], $user->password)) {

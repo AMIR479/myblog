@@ -27,7 +27,7 @@ abstract class Model
     public function findById(int $id): Model
     {
 
-        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ? ORDER BY date_creation DESC", [$id],  true);
     }
 
 
